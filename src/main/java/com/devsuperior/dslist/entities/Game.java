@@ -21,7 +21,10 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
+    @Column (columnDefinition = "TEXT")
     private String shortDescription;
+    /* Essa função permite textos longos na implementação da tabela SQL */
+    @Column (columnDefinition = "TEXT")
     private String longDescription;
     /* Em situações que o nome da coluna se encontra como camecase na classe, na tabela o nome ficara com underline
     entre as palavras: img_url */
