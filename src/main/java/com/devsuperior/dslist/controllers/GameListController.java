@@ -20,9 +20,18 @@ public class GameListController {
     @Autowired
     private GameListService gameListService; /* Injeta a classe service */
 
+    @Autowired
+    private GameService gameService;
+
     @GetMapping /* Mapea com método HTTP */
     public List<GameListDTO> findAll(){
         List<GameListDTO> result = gameListService.findAll();
+        return result;
+    }
+
+    @GetMapping(value = "/{listId}/games")/* Mapea com método HTTP */
+    public List<GameMinDTO> findByList(@PathVariable /*Configura o ID na requisição*/ Long listId){
+        List<GameMinDTO> result = gameService.findBylist(listId);
         return result;
     }
 }
