@@ -12,7 +12,7 @@ public interface GameRepository extends JpaRepository<Game, Long>
 
     /* Obs.: Quando se usa um nativeQuery o resultado da consulta precisa ser uma
      interface, comumente chamado de projection  */
-    /* Consulta costumiza SQL */
+    /* Consulta costumizada SQL */
     @Query(nativeQuery = true /* Condição para consulta SQL funcionar */, value = """
 		SELECT tb_game.id, tb_game.title, tb_game.game_year AS gameYear, tb_game.img_url AS imgUrl,
 		tb_game.short_description AS shortDescription, tb_belonging.position
